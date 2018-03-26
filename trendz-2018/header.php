@@ -59,7 +59,7 @@
 								<h1 class="logo-text">The Creative Source & How-To-Guide For Shopping Center & Retail Professionals</h1>
 							</div>
 							<div class="header-wrapper-main-menu">
-								<ul class="menu">
+								<ul class="menu menu-header">
 									<li class="menu-item level-1">
 										<a class="menu-item-link" href="#">Menu item</a>
 									</li>
