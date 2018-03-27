@@ -6,39 +6,51 @@ get_header();
 
 
 
+<div class="wp-single-wrapper">
 
-<div class="col-1">
-    <ul>
-        <?php
-        $args = array(
-            'post_type' => 'diario',
-            'posts_per_page' => -1,
-            'origem' => 'banco-do-brasil'
-        );
-        //
-        global $query;
-        $query = new WP_Query($args);
-        while ($query->have_posts()) : $query->the_post();
-            //
-            echo '<li>';
-            echo '<p>' . get_field('diario_data') . '</p>';
-            echo '<p>' . get_the_title() . '</p>';
-            echo '<p>' . get_field('diario_valor') . '</p>';
+	<section class="postimage">
+		<div class="postimage-wrapper">
 
-            $terms = get_the_terms($post->ID, 'categorias');
-            if ($terms != null) {
-                foreach ($terms as $term) {
-                    print '<p>' . $term->name . '</p>';
-                    unset($term);
-                }
-            }
+		</div>
+	</section>
+	<section class="breadcrumbs">
+		<div class="breadcrumbs-wrapper">
 
-            echo '</li>';
-        //
-        endwhile;
-        wp_reset_query();
-        ?>
-    </ul>
+		</div>
+	</section>
+
+	<article class="article">
+		<div class="article-header">
+			<div class="article-header-wrapper">
+
+			</div>
+		</div>
+		<div class="article-content">
+			<div class="article-content-wrapper">
+
+			</div>
+		</div>
+	</article>
+
+	<section class="author">
+		<div class="author-info">
+			<div class="author-info-wrapper">
+
+			</div>
+		</div>
+		<div class="author-readmore">
+			<div class="author-readmore-wrapper">
+
+			</div>
+		</div>
+	</section>
+
+	<section class="catreadmore">
+		<div class="catreadmore-wrapper">
+
+		</div>
+	</section>
+
 </div>
 
 
