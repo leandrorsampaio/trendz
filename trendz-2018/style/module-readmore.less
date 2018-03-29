@@ -1,0 +1,67 @@
+.reademore {
+    display: flex;
+    flex-direction: column;
+    .reademore-item {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 25px;
+        .reademore-item-image {
+            width: 30%;
+            position: relative;
+            .reademore-item-image-link {
+                .img {
+
+                }
+            }
+            .reademore-item-image-name {
+                font-family: 'Oswald', sans-serif;
+            	font-weight: 700;
+            	line-height: 1.4em;
+            	font-size: 1.4em;
+            	color: @green-2;
+                text-shadow: @text-shadow;
+                position: absolute;
+                left: 5px;
+                bottom: 5px;
+            }
+        }
+        .reademore-item-text {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            padding-left: 15px;
+            .reademore-item-text-title {
+                font-family: 'Open Sans', sans-serif;
+            	font-weight: 400;
+            	line-height: 1.4em;
+            	font-size: 2em;
+                display: block;
+                width: 100%;
+                text-transform: uppercase;
+                color: @black-font;
+                padding-bottom: 5px;
+                &:hover, &:focus {
+            		text-decoration: none;
+            		color: @green-2;
+            	}
+            }
+            .reademore-item-text-excerp {
+                font-family: 'Crimson Text', serif;
+            	font-weight: 400;
+            	line-height: 1.4em;
+            	font-size: 1.4em;
+                display: block;
+                width: 100%;
+                color: @black-font;
+                b {
+                    font-size: inherit;
+                }
+                &:hover, &:focus {
+            		text-decoration: none;
+            		color: @green-2;
+            	}
+            }
+        }
+    }
+}

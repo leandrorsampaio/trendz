@@ -9,14 +9,17 @@ if ( have_posts() ) {
 
 		//
 		// Content
+		$thePostId = get_the_ID();
 		$theTitle = get_the_title();
 		$theContent = get_the_content();
 		$theDate = get_the_date('F j, Y');
 		$thumbImgUrl = get_field('thumbnail_url');
 		//
 		// Category
-		//$theCategory = get_the_category();
+		$theCategory = get_the_category();
 		//$theCategoryLink = get_category_link( $theCategory );
+		$categories = get_the_category();
+		$category_id = $categories[0]->cat_ID;
 
 		//
 		// Author
@@ -106,46 +109,20 @@ if ( have_posts() ) {
 						<h4 class="section-title">More from the Author</h4>
 						<div class="author-readmore-wrapper-loop">
 
-
-							<?php
-								global $query;
-
-								$args = array(
-									'post_type' => 'post',
-									'tax_query' => array(
-										array(
-											'author' => $theAuthorId,
-										),
-									),
-								);
-
-								$query = new WP_Query($args);
-								while ($query->have_posts()) : $query->the_post();
-								//
-
-
-
-								echo '<div>'
-								echo get_the_title();
-								echo '<a href="' . get_permalink() . '" class="postsUl_li_visualizar link" target="_blank">';
-
-
-
-
-								//
-								endwhile;
-								wp_reset_query();
-							?>
-
-
-
-
+							 <?php
+							 // Readmore Module
+							 echo '<div class="reademore">';
+							 $args = array(
+								 'orderby' => 'rand',
+								 'posts_per_page' => 3,
+								 'author' => 1,
+								 'post__not_in' => array($thePostId)
+							 );
+							 include ('module-readmore-author.php');
+							 echo '</div>';
+							 ?>
 
 						</div>
-
-
-
-
 					</div>
 				</div>
 			</section>
@@ -163,6 +140,27 @@ if ( have_posts() ) {
 	<div class="row wp-single-wrapper-row">
 		<section class="col-12 catreadmore">
 			<div class="catreadmore-wrapper">
+				<?php
+				$postcat = get_the_category( $thePostId );
+				?>
+				<h4 class="section-title">More from <?php echo '<span>' . esc_html( $postcat[0]->name ) . '</span>'; ?></h4>
+				<div class="author-readmore-wrapper-loop">
+
+					 <?php
+					 // Readmore Module
+					 echo '<div class="reademore">';
+					 $args = array(
+						 'orderby' => 'rand',
+						 'posts_per_page' => 3,
+						 'category__and' => array($category_id),
+						 'post__not_in' => array($thePostId)
+					 );
+					 include ('module-readmore-cat.php');
+					 echo '</div>';
+					 ?>
+
+				</div>
+
 
 			</div>
 		</section>
