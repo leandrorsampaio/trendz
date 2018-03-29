@@ -5,7 +5,10 @@
 		//
 		//
 		.section-title {
-
+			color: @grey-4;
+			text-transform: uppercase;
+			font-size: 2.3em;
+			margin: 1.5em 0 10px 0;
 		}
 
 
@@ -15,7 +18,11 @@
 		.postimage {
 			.postimage-wrapper {
 				.postimage-wrapper-imgbg {
-
+					height: 400px;
+					width: 100%;
+					background-size: cover;
+					background-position: center center;
+					margin-top: 15px;
 				}
 			}
 		}
@@ -24,16 +31,30 @@
 		.aside {
 			padding-top: 35px;
 			.title {
+				padding-bottom: 15px;
 				.title-text {
-
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 400;
+					font-size: 3em;
+					text-align: right;
 				}
 			}
-			.breadcrumbs {
-				ul  {
-					li {
-						a {
-
-						}
+			.singlecats {
+				.singlecats-wrapper {
+					display: flex;
+					flex-direction: row;
+					justify-content: flex-end;
+					text-transform: uppercase;
+					font-size: 1.4em;
+					align-items: baseline;
+					font-weight: 700;
+					color: @black-font;
+					a {
+						font-size: inherit;
+						line-height: inherit;
+						margin-left: 8px;
+						margin-right: 2px;
+						font-weight: 700;
 					}
 				}
 			}
@@ -47,7 +68,7 @@
 					border-bottom: 1px solid @grey-4;
 					margin: 0;
 					padding: 2px 10px;
-					    margin-bottom: 2em;
+					margin-bottom: 2em;
 					.article-top-text {
 						margin: 0;
 						text-align: right;
@@ -80,6 +101,8 @@
 				}
 			}
 			.author {
+				margin-top: 35px;
+				border-top: 1px solid @grey-4;
 				.author-info {
 					.author-info-wrapper {
 						.author-info-wrapper-bio {

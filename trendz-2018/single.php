@@ -12,11 +12,12 @@ if ( have_posts() ) {
 		$theTitle = get_the_title();
 		$theContent = get_the_content();
 		$theDate = get_the_date('F j, Y');
+		$thumbImgUrl = get_field('thumbnail_url');
 		//
 		// Category
-		$theCategory = get_the_category();
-		$theCategoryLink = get_category_link( $theCategory );
-		$thumbImgUrl = get_field('thumbnail_url');
+		//$theCategory = get_the_category();
+		//$theCategoryLink = get_category_link( $theCategory );
+
 		//
 		// Author
 		$theAuthorId = get_the_author_meta('ID');
@@ -54,15 +55,10 @@ if ( have_posts() ) {
 			<div class="title">
 				<h1 class="title-text"><?php echo $theTitle; ?></h1>
 			</div>
-			<section class="breadcrumbs">
-				<ul>
-					<li>
-						<a href="<?php echo get_bloginfo('url');  ?>">Home</a>
-					</li>
-					<li>
-						<a href="<?php echo $theCategoryLink; ?>"><?php echo $theCategory[0]->cat_name; ?></a>
-					</li>
-				</ul>
+			<section class="singlecats">
+				<div class="singlecats-wrapper">
+					<?php the_category( ', ' ); ?>
+				</div>
 			</section>
 		</aside>
 
@@ -97,6 +93,7 @@ if ( have_posts() ) {
 					<div class="author-info-wrapper">
 						<h4 class="section-title">About the Author</h4>
 						<p class="author-info-wrapper-bio">
+							-
 							<a class="author-info-wrapper-bio-link" href="<?php echo $theAuthorUrl; ?>">
 								<?php echo $theAuthorCompleteName; ?>
 							</a>
@@ -111,66 +108,77 @@ if ( have_posts() ) {
 
 
 							<?php
-								global $query;
-								$query = new WP_Query($args);
-								while ($query->have_posts()) : $query->the_post();
-								//
-								echo '<li class="postsUl_li">';
-								//
-								echo '<p class="postsUl_li_title">';
-								echo get_the_title();
-								echo '</p>';
-								//
-								echo '<a href="' . get_permalink() . '" class="postsUl_li_visualizar link" target="_blank">';
-								echo 'Visualizar Newsletter';
+							global $query;
+
+
+							$args = array(
+								'post_type' => 'post',
+								'tax_query' => array(
+									array(
+										'author' => $theAuthorId,
+									),
+								),
+							);
+
+							$query = new WP_Query($args);
+							while ($query->have_posts()) : $query->the_post();
+							//
+							echo '<li class="postsUl_li">';
+							//
+							echo '<p class="postsUl_li_title">';
+							echo get_the_title();
+							echo '</p>';
+							//
+							echo '<a href="' . get_permalink() . '" class="postsUl_li_visualizar link" target="_blank">';
+							echo 'Visualizar Newsletter';
+							echo '</a>';
+							//
+							if (is_user_logged_in()) {
+								echo '<a href="' . get_edit_post_link() . '" class="postsUl_li_editar link" target="_blank">';
+								echo 'Editar Newsletter';
 								echo '</a>';
-								//
-								if (is_user_logged_in()) {
-									echo '<a href="' . get_edit_post_link() . '" class="postsUl_li_editar link" target="_blank">';
-									echo 'Editar Newsletter';
-									echo '</a>';
-								} else {
-									echo '<a href="' . get_admin_url() . '" class="postsUl_li_editar link" target="_blank">';
-									echo 'Logar para Editar';
-									echo '</a>';
-								}
-								//
-								echo '</li>';
-								//
-							endwhile;
-							wp_reset_query();
-							?>
+							} else {
+								echo '<a href="' . get_admin_url() . '" class="postsUl_li_editar link" target="_blank">';
+								echo 'Logar para Editar';
+								echo '</a>';
+							}
+							//
+							echo '</li>';
+							//
+						endwhile;
+						wp_reset_query();
+						?>
 
-
-
-
-
-						</div>
 
 
 
 
 					</div>
+
+
+
+
 				</div>
-			</section>
-
-		</div>
-	</div>
-
-
-
-
-
-
-
-
-	<div class="row wp-single-wrapper-row">
-		<section class="col-12 catreadmore">
-			<div class="catreadmore-wrapper">
-
 			</div>
 		</section>
+
 	</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="row wp-single-wrapper-row">
+	<section class="col-12 catreadmore">
+		<div class="catreadmore-wrapper">
+
+		</div>
+	</section>
+</div>
 
 
 
