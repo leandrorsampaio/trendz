@@ -108,77 +108,65 @@ if ( have_posts() ) {
 
 
 							<?php
-							global $query;
+								global $query;
 
-
-							$args = array(
-								'post_type' => 'post',
-								'tax_query' => array(
-									array(
-										'author' => $theAuthorId,
+								$args = array(
+									'post_type' => 'post',
+									'tax_query' => array(
+										array(
+											'author' => $theAuthorId,
+										),
 									),
-								),
-							);
+								);
 
-							$query = new WP_Query($args);
-							while ($query->have_posts()) : $query->the_post();
-							//
-							echo '<li class="postsUl_li">';
-							//
-							echo '<p class="postsUl_li_title">';
-							echo get_the_title();
-							echo '</p>';
-							//
-							echo '<a href="' . get_permalink() . '" class="postsUl_li_visualizar link" target="_blank">';
-							echo 'Visualizar Newsletter';
-							echo '</a>';
-							//
-							if (is_user_logged_in()) {
-								echo '<a href="' . get_edit_post_link() . '" class="postsUl_li_editar link" target="_blank">';
-								echo 'Editar Newsletter';
-								echo '</a>';
-							} else {
-								echo '<a href="' . get_admin_url() . '" class="postsUl_li_editar link" target="_blank">';
-								echo 'Logar para Editar';
-								echo '</a>';
-							}
-							//
-							echo '</li>';
-							//
-						endwhile;
-						wp_reset_query();
-						?>
+								$query = new WP_Query($args);
+								while ($query->have_posts()) : $query->the_post();
+								//
 
+
+
+								echo '<div>'
+								echo get_the_title();
+								echo '<a href="' . get_permalink() . '" class="postsUl_li_visualizar link" target="_blank">';
+
+
+
+
+								//
+								endwhile;
+								wp_reset_query();
+							?>
+
+
+
+
+
+						</div>
 
 
 
 
 					</div>
-
-
-
-
 				</div>
-			</div>
-		</section>
-
-	</div>
-</div>
-
-
-
-
-
-
-
-
-<div class="row wp-single-wrapper-row">
-	<section class="col-12 catreadmore">
-		<div class="catreadmore-wrapper">
+			</section>
 
 		</div>
-	</section>
-</div>
+	</div>
+
+
+
+
+
+
+
+
+	<div class="row wp-single-wrapper-row">
+		<section class="col-12 catreadmore">
+			<div class="catreadmore-wrapper">
+
+			</div>
+		</section>
+	</div>
 
 
 
