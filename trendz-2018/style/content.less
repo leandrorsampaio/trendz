@@ -1,0 +1,147 @@
+*, html, body {
+	font-size: 10px;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+	letter-spacing: -1px;
+	line-height: 1.6em;
+	font-size: 1.4em;
+	color: @black-font;
+}
+p {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.6em;
+	font-size: 1.4em;
+	color: @black-font;
+}
+a {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	line-height: 1.6em;
+	font-size: 1.4em;
+	color: @green-2;
+	text-decoration: none;
+	&:hover, &:focus {
+		text-decoration: underline;
+	}
+}
+.sub-title {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 700;
+	letter-spacing: -1px;
+	line-height: 1.5em;
+	font-size: 16px;
+	color: @black-font;
+	width: fit-content;
+
+}
+.bold {
+	font-weight: 700;
+}
+.italic {
+	font-style: italic;
+}
+.center {
+	text-align: center;
+}
+input, button {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+.wysiwyg-content {
+	font-family: 'Crimson Text', serif;
+	p {
+		font-family: 'Crimson Text', serif;
+		padding-top: 1.5em;
+		line-height: 1.8em;
+		font-size: 1.6em;
+	}
+	.bold, b, strong {
+		font-family: 'Crimson Text', serif;
+		font-weight: 700;
+	}
+	.italic, em {
+		font-family: 'Crimson Text', serif;
+		font-style: italic;
+	}
+	.center {
+		font-family: 'Crimson Text', serif;
+		text-align: center;
+		line-height: 1.8em;
+		font-size: 1.6em;
+	}
+	a {
+		font-family: 'Crimson Text', serif;
+		line-height: inherit;
+		font-size: inherit;
+		color: @green-2;
+	}
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Crimson Text', serif;
+		padding-top: 1.5em;
+		line-height: 1.8em;
+		font-size: 1.6em;
+		font-weight: 700;
+		margin: 0;
+	}
+	h1 {
+		font-size: 2.6em;
+	}
+	h2 {
+		font-size: 2.4em;
+	}
+	h3 {
+		font-size: 2.2em;
+	}
+	h4 {
+		font-size: 2em;
+	}
+	h5 {
+		font-size: 1.8em;
+	}
+	h6 {
+		font-size: 1.6em;
+	}
+	pre {
+		font-weight: 400;
+		line-height: 1.6em;
+		font-size: 1.4em;
+		padding-top: 1.5em;
+		color: @grey-2;
+	}
+	ol {
+		list-style: decimal;
+		list-style-position: inside;
+		padding: 0 0 0 30px;
+		margin: 0
+	}
+	ul {
+		list-style: initial;
+		list-style-position: inside;
+		padding: 0 0 0 30px;
+		margin: 0
+	}
+	li {
+		font-family: 'Crimson Text', serif;
+		list-style-position: inside;
+		list-style: initial;
+		padding-top: 0.5em;
+		line-height: 1.8em;
+		font-size: 1.6em;
+		&:first-of-type {
+			padding-top: 1.5em;
+		}
+	}
+	blockquote {
+		font-family: 'Crimson Text', serif;
+		line-height: 1.8em;
+	    font-size: 3em;
+	    font-style: italic;
+	    padding: 2em 5% 1em 15%;
+	}
+}

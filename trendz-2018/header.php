@@ -9,6 +9,7 @@
 
 		<link href="https://fonts.googleapis.com/css?family=Oswald:200,400,700" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,700" rel="stylesheet">
 
 
 
