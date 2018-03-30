@@ -14,7 +14,12 @@ if ( have_posts() ) {
 		$theContent = get_the_content();
 		$theExcerpt = get_the_excerpt();
 		$theDate = get_the_date('F j, Y');
-		$thumbImgUrl = get_field('thumbnail_url');
+		//
+		if(get_field('thumbnail_url')) {
+			$thumbImgUrl = get_field('thumbnail_url');
+		} else {
+			$thumbImgUrl = get_template_directory_uri() . '/images/highlight.jpg';
+		}
 		//
 		// Category
 		$theCategory = get_the_category();
@@ -42,7 +47,7 @@ if ( have_posts() ) {
 	<div class="row wp-single-wrapper-row">
 		<section class="col-12 postimage">
 			<div class="postimage-wrapper">
-				<div class="postimage-wrapper-imgbg" style="background-image: url(<?php echo $thumbImgUrl; ?>)"></div>
+ 				<div class="postimage-wrapper-imgbg" style="background-image: url(<?php echo $thumbImgUrl; ?>)"></div>
 			</div>
 		</section>
 	</div>

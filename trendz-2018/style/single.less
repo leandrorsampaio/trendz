@@ -81,6 +81,7 @@
 					align-items: baseline;
 					font-weight: 700;
 					color: @black-font;
+					flex-wrap: wrap;
 					a {
 						font-size: inherit;
 						line-height: inherit;
@@ -164,5 +165,55 @@
 			    margin-top: 10px;
 			}
 		}
+		//
+		//
+		//
+
+
+
+
+		.authorslist {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			padding-top: 25px;
+			//width: calc(100% + 20px);
+			//margin-left: -10px;
+			.authorslist-item {
+				width: 25%;
+				padding: 0 0 25px 0;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				padding: 0 10px 25px 10px;
+				.authorslist-item-link {
+					font-family: 'Open Sans', sans-serif;
+					font-weight: 700;
+					line-height: 1.6em;
+					font-size: 1.6em;
+					color: @black-font;
+					text-align: center;
+					img {
+
+					}
+					span {
+						margin-top: 5px;
+					}
+					&:hover, &:focus {
+						text-decoration: none;
+						color: @green-2;
+					}
+				}
+			}
+		}
+
+
+
+
+
+
+
+
 	}
 }

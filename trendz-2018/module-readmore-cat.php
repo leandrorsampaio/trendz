@@ -11,14 +11,17 @@
 			//
 			echo '<div class="reademore-item-image">';
 			echo '<a class="reademore-item-image-link" href="' . get_permalink() . '">';
-			echo '<img src="' . get_field('thumbnail_url') . '" alt="' . get_the_title() . '" />';
+			//
+			if (get_field('thumbnail_url')) {
+				echo '<img src="' . get_field('thumbnail_url') . '" alt="' . get_the_title() . '" />';
+			} else {
+				echo '<img src="' . get_template_directory_uri() . '/images/thumdefault.jpg" alt="' . get_the_title() . '" />';
+			}
+			//
 			echo '</a>';
-
 			//
 			$postcat = get_the_category( $post->ID );
 			echo '<span class="reademore-item-image-name">' . esc_html( $postcat[0]->name ) . '</span>';
-
-
 			echo '</div>';
 			//
 			echo '<div class="reademore-item-text">';

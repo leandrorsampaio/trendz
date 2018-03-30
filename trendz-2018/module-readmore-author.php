@@ -11,7 +11,13 @@
 			//
 			echo '<div class="reademore-item-image">';
 			echo '<a class="reademore-item-image-link" href="' . get_permalink() . '">';
-			echo '<img src="' . get_field('thumbnail_url') . '" alt="' . get_the_title() . '" />';
+			//
+			if (get_field('thumbnail_url')) {
+				echo '<img src="' . get_field('thumbnail_url') . '" alt="' . get_the_title() . '" />';
+			} else {
+				echo '<img src="' . get_template_directory_uri() . '/images/thumdefault.jpg" alt="' . get_the_title() . '" />';
+			}
+			//
 			echo '</a>';
 			echo '</div>';
 			//
@@ -39,5 +45,5 @@
 	} else {
 		// no posts found
 	}
-	
+
 ?>
