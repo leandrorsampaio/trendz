@@ -12,6 +12,7 @@ if ( have_posts() ) {
 		$thePostId = get_the_ID();
 		$theTitle = get_the_title();
 		$theContent = get_the_content();
+		$theExcerpt = get_the_excerpt();
 		$theDate = get_the_date('F j, Y');
 		$thumbImgUrl = get_field('thumbnail_url');
 		//
@@ -29,7 +30,6 @@ if ( have_posts() ) {
 		$theAuthorLastName = get_the_author_meta('user_lastname');
 		$theAuthorCompleteName = $theAuthorFirstName . ' ' . $theAuthorLastName;
 		$theAuthorUrl = get_author_posts_url($theAuthorId);
-
 
 	} // end while
 } // end if
@@ -55,14 +55,19 @@ if ( have_posts() ) {
 
 
 		<aside class="col-4 aside">
-			<div class="title">
-				<h1 class="title-text"><?php echo $theTitle; ?></h1>
-			</div>
-			<section class="singlecats">
-				<div class="singlecats-wrapper">
+			<section class="aside-cats">
+				<div class="aside-cats-wrapper">
 					<?php the_category( ', ' ); ?>
 				</div>
 			</section>
+			<div class="aside-title">
+				<h1 class="aside-title-text"><?php echo $theTitle; ?></h1>
+			</div>
+			<div class="aside-excert">
+				<p class="aside-title-text">
+					<?php echo $theExcerpt; ?>
+				</p>
+			</div>
 		</aside>
 
 
