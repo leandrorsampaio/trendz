@@ -46,6 +46,16 @@
         <div id="wrapper" class="wrapper">
 
 
+
+            <div id="gototop" class="gototop">
+                <a class="gototop-link" href="#topbar">
+                    <i class="fa fa-caret-up" aria-hidden="true"></i>
+                    <span>Go to top</span>
+                </a>
+			</div>
+
+
+
 			<div id="topbar" class="topbar">
 
 			</div>

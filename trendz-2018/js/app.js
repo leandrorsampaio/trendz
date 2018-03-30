@@ -38,6 +38,20 @@ function smoothScroll() {
 }
 
 
+function scrollToTop() {
+
+	$(window).scroll(function() {
+
+		if ($(window).scrollTop() > 400) {
+			$('.gototop').css('right', '10px');
+		} else {
+			$('.gototop').css('right', '-150px');
+		}
+
+	});
+
+}
+
 
 
 
@@ -84,11 +98,12 @@ function mobileMenu() {
 // Run on load
 $(window).on('load', function () {
 	smoothScroll();
+	scrollToTop();
 	menuMobile();
 	toggleAd();
 	mobileMenu();
 });
 
 // Run on resize
-$(window).on('resize', function () {
-});
+//$(window).on('resize', function () {
+//});
