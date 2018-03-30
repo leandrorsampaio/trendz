@@ -8,23 +8,26 @@
         padding-bottom: 25px;
         .reademore-item-image {
             width: 30%;
-            position: relative;
-            .reademore-item-image-link {
-                .img {
 
+            .reademore-item-image-link {
+                position: relative;
+                display: block;
+                img {
+                    position: relative;
+                }
+                .reademore-item-image-link-name {
+                    font-family: 'Oswald', sans-serif;
+                	font-weight: 700;
+                	line-height: 1.4em;
+                	font-size: 14px;
+                	color: @green-2;
+                    text-shadow: @text-shadow;
+                    position: absolute;
+                    left: 5px;
+                    bottom: 3px;
                 }
             }
-            .reademore-item-image-name {
-                font-family: 'Oswald', sans-serif;
-            	font-weight: 700;
-            	line-height: 1.4em;
-            	font-size: 1.4em;
-            	color: @green-2;
-                text-shadow: @text-shadow;
-                position: absolute;
-                left: 5px;
-                bottom: 5px;
-            }
+
         }
         .reademore-item-text {
             width: 70%;
@@ -35,7 +38,7 @@
                 font-family: 'Open Sans', sans-serif;
             	font-weight: 400;
             	line-height: 1.4em;
-            	font-size: 2em;
+            	font-size: 15px;
                 display: block;
                 width: 100%;
                 text-transform: uppercase;
@@ -50,7 +53,7 @@
                 font-family: 'Crimson Text', serif;
             	font-weight: 400;
             	line-height: 1.4em;
-            	font-size: 1.4em;
+            	font-size: 14px;
                 display: block;
                 width: 100%;
                 color: @black-font;
@@ -61,6 +64,29 @@
             		text-decoration: none;
             		color: @green-2;
             	}
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: @tablet-min) {
+    .catreadmore {
+        .reademore {
+                flex-direction: row;
+            .reademore-item {
+                flex-direction: column;
+                padding: 0 30px 25px 0;
+                &:last-of-type {
+                    padding-right: 0;
+                }
+                .reademore-item-image {
+                    width: 100%;
+                }
+                .reademore-item-text {
+                    width: 100%;
+                    padding-left: 0;
+                    padding-top: 8px;
+                }
             }
         }
     }

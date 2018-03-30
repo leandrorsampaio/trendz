@@ -47,7 +47,8 @@ if ( have_posts() ) {
 	<div class="row wp-single-wrapper-row">
 		<section class="col-12 postimage">
 			<div class="postimage-wrapper">
- 				<div class="postimage-wrapper-imgbg" style="background-image: url(<?php echo $thumbImgUrl; ?>)"></div>
+ 				<!-- <div class="postimage-wrapper-imgbg" style="background-image: url(<?php echo $thumbImgUrl; ?>)"></div> -->
+				<img class="postimage-wrapper-imgfile" src="<?php echo $thumbImgUrl; ?>" alt="<?php echo $theTitle; ?>" />
 			</div>
 		</section>
 	</div>
@@ -59,7 +60,7 @@ if ( have_posts() ) {
 	<div class="row wp-single-wrapper-row">
 
 
-		<aside class="col-4 aside">
+		<aside class="col-12 col-md-4 aside">
 			<section class="aside-cats">
 				<div class="aside-cats-wrapper">
 					<?php the_category( ', ' ); ?>
@@ -78,7 +79,7 @@ if ( have_posts() ) {
 
 
 
-		<div class="col-8 mainside">
+		<div class="col-12 col-md-8 mainside">
 
 			<article class="article">
 				<div class="article-top">

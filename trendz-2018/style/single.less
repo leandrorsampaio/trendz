@@ -43,6 +43,12 @@
 					background-position: center center;
 					margin-top: 15px;
 				}
+				.postimage-wrapper-imgfile {
+					height: auto;
+					width: 100%;
+					display: block;
+					margin-top: 15px;
+				}
 			}
 		}
 		//
@@ -181,17 +187,36 @@
 			//width: calc(100% + 20px);
 			//margin-left: -10px;
 			.authorslist-item {
-				width: 25%;
 				padding: 0 0 25px 0;
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
 				padding: 0 10px 25px 10px;
+
+
+
+
+				width: 100%;
+				@media only screen and (min-width: @mobile-min) and (max-width: @mobile-max) {
+					width: 50%;
+				}
+				@media only screen and (min-width: @tablet-min) and (max-width: @tablet-max) {
+					width: 33.33333333%;
+				}
+				@media only screen and (min-width: @desktop-min) and (max-width: @desktop-max) {
+					width: 25%;
+				}
+				@media only screen and (min-width: @desktop-large-min) {
+					width: 20%;
+				}
+
+
+
 				.authorslist-item-link {
 					font-family: 'Open Sans', sans-serif;
 					font-weight: 700;
 					line-height: 1.6em;
-					font-size: 1.6em;
+					font-size: 16px;
 					color: @black-font;
 					text-align: center;
 					img {

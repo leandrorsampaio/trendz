@@ -64,6 +64,17 @@ function toggleAd() {
 
 }
 
+function mobileMenu() {
+
+	$('.header-mobile-top-btn').on('click', function () {
+		$('.header-mobile-menu').slideToggle().toggleClass('active');
+		$('.header-mobile-top-btn-opened').toggleClass('active');
+		$('.header-mobile-top-btn-closed').toggleClass('active');
+
+	});
+
+}
+
 
 
 
@@ -75,6 +86,7 @@ $(window).on('load', function () {
 	smoothScroll();
 	menuMobile();
 	toggleAd();
+	mobileMenu();
 });
 
 // Run on resize

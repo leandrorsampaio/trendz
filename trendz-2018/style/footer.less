@@ -3,20 +3,30 @@
 .menu {
 	&.menu-footer {
 		display: flex;
-		flex-direction: row;
 		width: 100%;
 		padding: 0 30px;
 		justify-content: center;
 		align-items: center;
+		flex-direction: column;
+		@media only screen and (min-width: @tablet-min) {
+		    flex-direction: row;
+		}
 		.menu-item {
-			padding: 0 20px;
-			border-right: 1px solid @white;
+			padding: 5px 0;
+			@media only screen and (min-width: @tablet-min) {
+				padding: 0 20px;
+				border-right: 1px solid @white;
+			}
 			&:first-of-type {
-				padding-left: 0;
+				@media only screen and (min-width: @tablet-min) {
+				    padding-left: 0;
+				}
 			}
 			&:last-of-type {
-				padding-right: 0;
-				border-right: none;
+				@media only screen and (min-width: @tablet-min) {
+					padding-right: 0;
+					border-right: none;
+				}
 			}
 			.menu-item-link {
 				color: @white;
@@ -53,36 +63,51 @@
 				.footer-newsletter-title {
 					color: @white;
 					font-family: 'Open Sans', sans-serif;
-					font-size: 22px;
 					font-weight: 400;
 					letter-spacing: 2px;
+					text-align: center;
+					font-size: 18px;
+					@media only screen and (min-width: @tablet-min) {
+						font-size: 22px;
+					}
 				}
 				.footer-newsletter-form {
 					width: 80%;
 					display: flex;
-					flex-direction: row;
 					justify-content: space-between;
+					flex-direction: column;
+					@media only screen and (min-width: @tablet-min) {
+						flex-direction: row;
+					}
 					.footer-newsletter-form-imput {
 						color: @black-font;
 						display: block;
 						border: 0;
 						background: @white;
-						width: calc(80% - 20px);
 						height: 30px;
 						padding: 5px 10px;
 						font-size: 14px;
 						text-align: center;
+						width: 100%;
+						@media only screen and (min-width: @tablet-min) {
+							width: calc(80% - 20px);
+						}
 					}
 					.footer-newsletter-form-btn {
 						color: @black-font;
 						display: block;
 						border: 0;
 						background: @white;
-						width: 20%;
 						height: 30px;
 						cursor: pointer;
 						font-size: 14px;
 						font-weight: 700;
+						width: 100%;
+						margin-top: 5px;
+						@media only screen and (min-width: @tablet-min) {
+							width: 20%;
+							margin-top: 0;
+						}
 						&:hover, &:focus {
 							color: @green-2;
 						}
@@ -98,13 +123,19 @@
 				.footer-social-link {
 					display: block;
 					border-radius: 100px;
-					height: 50px;
-					width: 50px;
 					color: @white;
 					text-align: center;
-					font-size: 30px;
-					line-height: 50px;
 					margin: 0 5px;
+					font-size: 18px;
+					line-height: 30px;
+					height: 30px;
+					width: 30px;
+					@media only screen and (min-width: @tablet-min) {
+						font-size: 30px;
+						line-height: 50px;
+						height: 50px;
+						width: 50px;
+					}
 				}
 				.facebook {
 					background-color: #3b5998
@@ -119,10 +150,24 @@
 					background-color: #ff6600
 				}
 				.icsc {
+					display: none;
+					@media only screen and (min-width: @tablet-min) {
+						display: inherit;
+						height: 71px;
+						width: 45px;
+						margin: 0 5px 0 50px;
+					}
+				}
+			}
+			.footer-icscmobile {
+				.icsc {
 					height: 71px;
-					width: 45px;
-					margin: 0 5px 0 50px;
-					img {
+				    width: 45px;
+				    margin: 0 auto;
+				    display: block;
+				    margin-top: 20px;
+					@media only screen and (min-width: @tablet-min) {
+						display: none;
 					}
 				}
 			}

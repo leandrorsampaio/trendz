@@ -67,6 +67,11 @@
 				</a>
 			</div>
 
+			<div class="col-12 footer-icscmobile">
+				<a class="footer-social-link icsc" href="#">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/icsc.png" alt="icsc logo"/>
+				</a>
+			</div>
 
 		</div>
 	</div>

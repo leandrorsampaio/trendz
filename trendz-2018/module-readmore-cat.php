@@ -18,10 +18,11 @@
 				echo '<img src="' . get_template_directory_uri() . '/images/thumdefault.jpg" alt="' . get_the_title() . '" />';
 			}
 			//
-			echo '</a>';
-			//
 			$postcat = get_the_category( $post->ID );
-			echo '<span class="reademore-item-image-name">' . esc_html( $postcat[0]->name ) . '</span>';
+			echo '<span class="reademore-item-image-link-name">' . esc_html( $postcat[0]->name ) . '</span>';
+			//
+			echo '</a>';
+
 			echo '</div>';
 			//
 			echo '<div class="reademore-item-text">';

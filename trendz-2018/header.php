@@ -51,10 +51,10 @@
 			</div>
 
 
-	        <header id="header" class="container">
+	        <header id="header" class="header container">
 
 				<div class="row header-wrapper">
-					<div class="col-10 header-wrapper-main">
+					<div class="col-9 col-lg-10 header-wrapper-main">
 						<div class="header-wrapper-main-logo">
 							<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
 							<h1 class="logo-text">The Creative Source & How-To-Guide For Shopping Center & Retail Professionals</h1>
@@ -101,7 +101,7 @@
 						</div>
 
 					</div>
-					<div class="col-2 header-wrapper-side">
+					<div class="col-3 col-lg-2 header-wrapper-side">
 						<div class="header-printedition">
 							<div class="header-printedition-header">
 								<p>
@@ -114,16 +114,16 @@
 							</div>
 						</div>
 						<div class="header-social">
-							<a class="header-social-link facebook" href="#">
+							<a class="header-social-link facebook" target="_blank" href="#">
 								<i class="fa fa-facebook" aria-hidden="true"></i>
 							</a>
-							<a class="header-social-link twitter" href="#">
+							<a class="header-social-link twitter" target="_blank" href="#">
 								<i class="fa fa-twitter" aria-hidden="true"></i>
 							</a>
-							<a class="header-social-link linkedin" href="#">
+							<a class="header-social-link linkedin" target="_blank" href="#">
 								<i class="fa fa-linkedin" aria-hidden="true"></i>
 							</a>
-							<a class="header-social-link rss" href="#">
+							<a class="header-social-link rss" target="_blank" href="<?php bloginfo('rss2_url'); ?>">
 								<i class="fa fa-rss" aria-hidden="true"></i>
 							</a>
 						</div>
@@ -131,6 +131,62 @@
 				</div>
 
 	        </header><!-- #header -->
+
+
+
+            <header id="header-mobile" class="header-mobile">
+                <div class="header-mobile-top">
+                    <div class="header-mobile-top-btn">
+                        <i class="fa fa-times header-mobile-top-btn-opened" aria-hidden="true"></i>
+                        <i class="fa fa-bars header-mobile-top-btn-closed active" aria-hidden="true"></i>
+                    </div>
+                    <div class="header-mobile-top-name">
+                        <h1 class="header-mobile-top-name-text">Advertising Trendz</h1>
+                    </div>
+                </div>
+                <nav class="header-mobile-menu">
+                    <ul>
+                        <?php
+                        // WP_Query arguments
+                        $args_menuheader = array(
+                            'post_type'              => array( 'menuheader' ),
+                            'order'                  => 'ASC'
+                        );
+                        // The Query
+                        $query_menuheader = new WP_Query( $args_menuheader );
+                        // The Loop
+                        if ( $query_menuheader->have_posts() ) {
+
+                            while ( $query_menuheader->have_posts() ) {
+                                $query_menuheader->the_post();
+
+                                $var_menuheader_title = get_the_title();
+                                $var_menuheader_link = get_field('menu_link');
+
+                                echo '<li>';
+                                echo '<a href="' . $var_menuheader_link . '">' . $var_menuheader_title . '</a>';
+                                echo '</li>';
+                            }
+
+                        } else {
+                            // no posts found
+                        }
+                        // Restore original Post Data
+                        wp_reset_postdata();
+                        ?>
+                    </ul>
+                    <div class="header-mobile-search">
+                        <form class="search-header">
+                            <input class="search-header-imput" type="text" value="Search..." onclick="this.value=''" />
+                            <button class="search-header-btn">
+                                <i class="fa fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </header><!-- #header -->
+
+
 
 
 			<div id="togglead" class="container togglead">

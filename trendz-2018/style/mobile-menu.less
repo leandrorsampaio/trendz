@@ -1,0 +1,84 @@
+.header-mobile {
+    @media only screen and (min-width: @tablet-min) {
+	    display: none;
+	}
+    display: flex;
+    flex-direction: column;
+    .header-mobile-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: @black;
+        align-items: center;
+        padding-right: 15px;
+        padding-left: 15px;
+        .header-mobile-top-btn {
+            .fa {
+                display: none;
+                color: @white;
+                font-size: 26px;
+                &.active {
+                    display: flex;
+                }
+            }
+        }
+        .header-mobile-top-name {
+            .header-mobile-top-name-text {
+                color: @white;
+                font-family: 'Crimson Text', serif;
+                text-transform: uppercase;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 18px;
+                letter-spacing: 0;
+            }
+        }
+    }
+    .header-mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: @grey-5;
+        &.active {
+            display: flex;
+        }
+        ul {
+            margin: 0;
+            li {
+                a {
+                    font-family: 'Open Sans', sans-serif;
+                    text-transform: uppercase;
+                    font-weight: 400;
+                    color: @white;
+                    display: block;
+                    width: 100%;
+                    padding: 10px 15px;
+                    font-size: 14px;
+                    border-bottom: 1px solid white;
+                    margin: 0;
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+    .header-mobile-search {
+
+        .search-header {
+            background: @green-1;
+            padding: 8px 15px;
+        	.search-header-imput {
+
+        	}
+        	.search-header-btn {
+                border: 1px solid white;
+        		.icon {
+
+        		}
+        		&:hover, &:focus {
+
+        		}
+        	}
+        }
+
+
+    }
+}
