@@ -16,6 +16,10 @@
 				echo '<img src="' . get_template_directory_uri() . '/images/thumdefault.jpg" alt="' . get_the_title() . '" />';
 			}
 			//
+			if (get_field('free_content')) {
+				echo '<span class="mosaic-item-link-free"><i class="fa fa-tag" aria-hidden="true"></i>Free Content</span>';
+			}
+			//
 			echo '</a>';
 			echo '</div>';
 
