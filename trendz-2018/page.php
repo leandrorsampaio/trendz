@@ -11,7 +11,12 @@ if ( have_posts() ) {
 		//
 		//
 		// Lib
-		include ('module-lib.php');
+		//include ('module-lib.php');
+		$pageID_aboutus = 7974;
+		$pageID_contactus = 38;
+		$pageID_subscribe = 33;
+		$pageID_backissues = 35;
+		$pageID_contributors = 8008;
 		//
 		//
 		if (is_page($pageID_aboutus)) {
