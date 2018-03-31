@@ -23,16 +23,6 @@ if ( have_posts() ) {
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
 <div class="wp-single-wrapper container authorpage">
 
 	<div class="row wp-single-wrapper-row">
