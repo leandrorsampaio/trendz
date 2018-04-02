@@ -19,7 +19,7 @@ if ( have_posts() ) {
         // Mosaic
         $args = array(
     		'orderby' => 'rand',
-    		'posts_per_page' => 13
+    		'posts_per_page' => 12
     	);
         echo '<div class="col-12 mosaic">';
         include ('module-mosaic-highlights.php');
