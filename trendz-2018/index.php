@@ -12,17 +12,17 @@ if ( have_posts() ) {
 
 
 <div class="wp-single-wrapper container">
-	<div class="row wp-single-wrapper-row mosaic-wrapper">
+	<div class="row wp-single-wrapper-row mosaic-wrapper-highlights">
         <?php
         //
         //
         // Mosaic
         $args = array(
     		'orderby' => 'rand',
-    		'posts_per_page' => 50
+    		'posts_per_page' => 13
     	);
         echo '<div class="col-12 mosaic">';
-        include ('module-mosaic.php');
+        include ('module-mosaic-highlights.php');
         echo '</div>';
         //
         ?>
