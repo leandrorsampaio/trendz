@@ -102,13 +102,13 @@
 							</ul>
 						</div>
 						<div class="header-wrapper-main-search">
-							<form class="search-header">
-								<input class="search-header-imput" type="text" value="Search..." onclick="this.value=''" />
-								<button class="search-header-btn">
+							<form  class="search-header" role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+								<input class="search-header-imput" type="text" value="Search..." onclick="this.value=''" name ="s" maxlenght="20" />
+								<button class="search-header-btn" type="submit">
 									<i class="fa fa-search" aria-hidden="true"></i>
 								</button>
 							</form>
-						</div>
+                        </div>
 
 					</div>
 					<div class="col-3 col-lg-2 header-wrapper-side">
