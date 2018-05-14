@@ -8,6 +8,7 @@ if ( have_posts() ) {
 
 	} // end while
 } // end if
+
 ?>
 
 
@@ -17,12 +18,8 @@ if ( have_posts() ) {
         //
         //
         // Mosaic
-        $args = array(
-    		'orderby' => 'rand',
-    		'posts_per_page' => 12
-    	);
         echo '<div class="col-12 mosaic">';
-        include ('module-mosaic-highlights.php');
+        include ('module-mosaic-home.php');
         echo '</div>';
         //
         ?>

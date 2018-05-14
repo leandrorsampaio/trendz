@@ -2,6 +2,10 @@
 //
 get_header();
 //
+//
+include ('mudule-lib.php');
+//
+//
 // Loop
 if ( have_posts() ) {
 	while ( have_posts() ) {
@@ -96,7 +100,46 @@ if ( have_posts() ) {
 				<div class="article-content">
 					<div class="article-content-wrapper">
 						<div class="wysiwyg-content">
-							<?php echo $theContent; ?>
+							<?php
+							//
+							//
+							$var_post_registered_only = get_field('post_registered_only');
+							if ($var_post_registered_only != true) {
+								echo $theContent;
+							} else {
+								$counter = $theContent;
+									$limitation = substr($theContent, 0, 600);
+									echo $limitation . ' (...)';
+									//
+									//
+									$args_blockedarticle = array(
+		                                'page_id' => $ID_blockedarticle
+		                            );
+		                            // The Query
+		                            $query_blockedarticle = new WP_Query( $args_blockedarticle );
+		                            // The Loop
+		                            if ( $query_blockedarticle->have_posts() ) {
+
+		                                while ( $query_blockedarticle->have_posts() ) {
+		                                    $query_blockedarticle->the_post();
+		                                    //
+
+											echo '<div class="blocker-article-message">';
+
+											echo '<div class="blocker-article-message-title">' . get_the_title() . '</div>';
+											echo '<div class="blocker-article-message-text">' . get_the_content() . '</div>';
+
+											echo '</div>';
+
+		                                    //
+		                                }
+		                            } else {
+		                                // no posts found
+		                            }
+		                            // Restore original Post Data
+		                            wp_reset_postdata();
+							}
+							?>
 						</div>
 					</div>
 				</div>

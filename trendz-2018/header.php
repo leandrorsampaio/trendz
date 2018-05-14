@@ -39,7 +39,12 @@
 
     <body>
 
-
+        <?php
+        //
+        // LIB
+        include ('mudule-lib.php');
+        //
+        ?>
 
 
 
@@ -119,9 +124,36 @@
 								</p>
 								<img src="<?php echo get_template_directory_uri(); ?>/images/icsc.png" alt="icsc logo"/>
 							</div>
-							<div class="header-printedition-cover">
 
-							</div>
+                            <?php
+                            //
+                            //
+                            // WP_Query Other info header
+                            $args_printedition = array(
+                                'post_type' => array( 'frontendconfig' ),
+                        		'p' => $ID_PrintEdition
+                            );
+                            // The Query
+                            $query_printedition = new WP_Query( $args_printedition );
+                            // The Loop
+                            if ( $query_printedition->have_posts() ) {
+
+                                while ( $query_printedition->have_posts() ) {
+                                    $query_printedition->the_post();
+                                    //
+                                    $var_print_edition_link = get_field('print_edition_link');
+                                    $var_print_edition_image = get_field('print_edition_image');
+                                    //
+                                }
+                            } else {
+                                // no posts found
+                            }
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                            ?>
+                            <a class="header-printedition-cover" href="<?php echo $var_print_edition_link; ?>">
+                                <img src="<?php echo $var_print_edition_image; ?>" alt="Print Edition Cover"/>
+                            </a>
 						</div>
 						<div class="header-social">
 							<a class="header-social-link facebook" target="_blank" href="#">
@@ -216,7 +248,46 @@
 							</p>
 						</div>
 						<div class="togglead-wrapper-inner-ad">
+                            <?php
+                            //
+                            //
+                            // WP_Query Other info header
+                            $args_headerID = array(
+                                'post_type' => array( 'frontendconfig' ),
+                        		'p' => $ID_HeaderID
+                            );
+                            // The Query
+                            $query_headerID = new WP_Query( $args_headerID );
+                            // The Loop
+                            if ( $query_headerID->have_posts() ) {
 
+                                while ( $query_headerID->have_posts() ) {
+                                    $query_headerID->the_post();
+                                    //
+                                    $var_header_ad_image = get_field('header_ad_image');
+                                    $var_header_ad_question = get_field('header_ad_question');
+                                    $var_header_ad_link = get_field('header_ad_link');
+                                    $var_header_ad_post = get_field('header_ad_post');
+                                    //
+
+                                    if($var_header_ad_question == true) {
+                                        echo '<a href="' . $var_header_ad_link . '" target="_blank">';
+                                        echo '<img src="' . $var_header_ad_image . '" />';
+                                        echo '</a>';
+                                    } else {
+                                        echo '<a href="' . $var_header_ad_post . '">';
+                                        echo '<img src="' . $var_header_ad_image . '" />';
+                                        echo '</a>';
+                                    }
+
+
+                                }
+                            } else {
+                                // no posts found
+                            }
+                            // Restore original Post Data
+                            wp_reset_postdata();
+                            ?>
 						</div>
 					</div>
 				</div>
