@@ -26,9 +26,14 @@
 				<div class="article-content">
 					<div class="article-content-wrapper">
 						<div class="wysiwyg-content">
- 							<?php
-							echo $theContent;
-							?>
+
+ 							<?php echo $theContent; ?>
+
+                            <div class="login-form">
+                                <?php
+                                    wp_login_form();
+                                ?>
+                            </div>
 						</div>
 					</div>
 				</div>

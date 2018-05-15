@@ -5,6 +5,24 @@
 	@media only screen and (max-width: @mobile-max) {
 	    display: none;
 	}
+	.topbar-row {
+		.topbar-col {
+			display: flex;
+		    flex-direction: row;
+		    justify-content: flex-end;
+			a {
+				font-family: 'Open Sans', sans-serif;
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 30px;
+				color: @white;
+				cursor: pointer;
+				&:hover {
+					color: @green-1;
+				}
+			}
+		}
+	}
 }
 .footerbar {
 	width: 100%;

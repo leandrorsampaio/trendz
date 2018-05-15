@@ -62,7 +62,20 @@
 
 
 			<div id="topbar" class="topbar">
-
+                <div class="container">
+                    <div class="row topbar-row">
+                        <div class="col-12 topbar-col">
+                            <?php
+                                if(is_user_logged_in()) {
+                                     get_currentuserinfo();
+                                    echo '<a href="' . get_permalink($pageID_login) . '">Wellcome ' . $current_user->user_login . '</a>';
+                                } else {
+                                    echo '<a href="' . get_permalink($pageID_login) . '">Member Login</a>';
+                                }
+                            ?>
+                        </div>
+                    </div>
+                </div>
 			</div>
 
 

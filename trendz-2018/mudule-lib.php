@@ -17,6 +17,7 @@ $pageID_contactus = 38;
 $pageID_subscribe = 33;
 $pageID_backissues = 35;
 $pageID_contributors = 8008;
+$pageID_login = 8073;
 
 $ID_catAds = 445;
 

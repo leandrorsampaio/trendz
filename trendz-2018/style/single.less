@@ -313,3 +313,62 @@
 		font-size: 14px;
 	}
 }
+
+
+
+
+.login-form {
+	border: 1px solid @grey-1;
+	padding: 20px;
+	max-width: 400px;
+	margin-top: 15px;
+	border-radius: 3px;
+	form {
+
+	}
+	p {
+		font-family: 'Open Sans', sans-serif;
+		font-weight: 400;
+		font-size: 14px;
+		color: @black-font;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+	.login-username, .login-password {
+		label {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 700;
+			font-size: 14px;
+		}
+		input {
+			font-family: 'Open Sans', sans-serif;
+			font-weight: 400;
+			font-size: 14px;
+			background: @grey-3;
+			border: 0;
+			padding: 5px 15px;
+		}
+	}
+	.login-remember {
+		font-size: 14px;
+		label {
+			font-size: 12px;
+			input {
+
+			}
+		}
+	}
+	.login-submit {
+		cursor: pointer;
+		.button {
+			padding: 3px 50px;
+			background: @grey-3;
+			font-weight: 700;
+		    font-size: 14px;
+		    align-self: flex-end;
+			border: 0;
+			cursor: pointer;
+		}
+	}
+}

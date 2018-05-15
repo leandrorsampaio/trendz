@@ -30,6 +30,8 @@ if ( have_posts() ) {
 		    include ('module-pagedefault.php');
 		} elseif (is_page($pageID_contributors)) {
 		    include ('module-authors.php');
+		} elseif (is_page($pageID_login)) {
+		    include ('module-login.php');
 		} else {
 		    include ('module-pagedefault.php');
 		}
