@@ -1,9 +1,13 @@
 <?php
 	//
+	// LIB
+	include ('mudule-lib.php');
+
+	//
 	// Geting parameters from the Logic
 	$args_mosaic = array(
 		'post_type' => array( 'frontendconfig' ),
-		'p' => 7983
+		'p' => $ID_HomeMosaicConfiguration
 	);
 	// The Query
 	$the_query_params = new WP_Query($args_mosaic);
