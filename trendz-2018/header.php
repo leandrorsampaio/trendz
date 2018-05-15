@@ -115,12 +115,12 @@
                                             $var_menu_link_free = get_field('menu_link_free');
                                             echo '<a class="menu-item-link" href="' . $var_menu_link_free . '">' . $var_menuheader_title . '</a>';
 
-                                        } if ($var_menu_link_type == 'pagelink') {
+                                        } elseif ($var_menu_link_type == 'pagelink') {
 
                                             $var_menu_link_page = get_field('menu_link_page');
                                             echo '<a class="menu-item-link" href="' . $var_menu_link_page . '">' . $var_menuheader_title . '</a>';
 
-                                        } else {
+                                        } elseif ($var_menu_link_type == 'categorylink') {
 
                                             $terms = get_field('menu_link_tax');
 
@@ -130,6 +130,8 @@
                                                 endforeach;
                                             endif;
 
+                                        } else {
+                                            //
                                         }
 
                                         echo '</li>';
