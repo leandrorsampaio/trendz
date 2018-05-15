@@ -71,9 +71,11 @@
 				<div class="row header-wrapper">
 					<div class="col-9 col-lg-10 header-wrapper-main">
 						<div class="header-wrapper-main-logo">
-							<img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
-							<h1 class="logo-text">The Creative Source & How-To-Guide For Shopping Center & Retail Professionals</h1>
-						</div>
+                            <a href="<?php echo bloginfo('url'); ?>">
+    						    <img src="<?php echo get_template_directory_uri(); ?>/images/logo.png" />
+    							<h1 class="logo-text">The Creative Source & How-To-Guide For Shopping Center & Retail Professionals</h1>
+                            </a>
+                        </div>
 						<div class="header-wrapper-main-menu">
 							<ul class="menu menu-header">
 								<?php

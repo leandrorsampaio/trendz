@@ -20,6 +20,7 @@
 			//
 			if($var_front_end_mosaic_options == 'mosaichome1') {
 				$args_mosaic_home = array(
+					'category__not_in' => array( $ID_catAds ),
 					'posts_per_page' => 12,
 					'order' => 'ASC'
 				);
@@ -47,6 +48,7 @@
 				);
 			} else {
 				$args_mosaic_home = array(
+					'category__not_in' => array( $ID_catAds ),
 					'posts_per_page' => 12,
 					'orderby' => 'rand'
 				);
@@ -82,7 +84,7 @@
 			//
 			//
 			if (get_field('thumbnail_url')) {
-				$thumbImgUrl = get_the_title();
+				$thumbImgUrl = get_field('thumbnail_url');
 			} else {
 				$thumbImgUrl = get_template_directory_uri() . '/images/thumdefault.jpg';
 			}

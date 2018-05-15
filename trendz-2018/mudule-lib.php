@@ -18,4 +18,7 @@ $pageID_subscribe = 33;
 $pageID_backissues = 35;
 $pageID_contributors = 8008;
 
+$ID_catAds = 445;
+
+
 ?>

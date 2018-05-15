@@ -20,7 +20,7 @@
 			//
 			//
 			if (get_field('thumbnail_url')) {
-				$thumbImgUrl = get_the_title();
+				$thumbImgUrl = get_field('thumbnail_url');
 			} else {
 				$thumbImgUrl = get_template_directory_uri() . '/images/thumdefault.jpg';
 			}

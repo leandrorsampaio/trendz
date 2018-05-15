@@ -17,6 +17,13 @@
 			} else {
 				echo '<img src="' . get_template_directory_uri() . '/images/thumdefault.jpg" alt="' . get_the_title() . '" />';
 			}
+
+			$var_post_registered_only = get_field('post_registered_only');
+			if ($var_post_registered_only != true) {
+				echo '<span class="free-article">Free Article</span>';
+			}
+
+
 			//
 			echo '</a>';
 			echo '</div>';
@@ -40,6 +47,14 @@
 			echo '</div>';
 
 		}
+
+
+		// Pagination
+		echo '<div class="pagination-wrapper">';
+		echo paginate_links();
+		echo '</div>';
+
+
 		/* Restore original Post Data */
 		wp_reset_postdata();
 	} else {

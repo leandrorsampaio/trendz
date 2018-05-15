@@ -21,6 +21,12 @@
 			$postcat = get_the_category( $post->ID );
 			echo '<span class="reademore-item-image-link-name">' . esc_html( $postcat[0]->name ) . '</span>';
 			//
+			$var_post_registered_only = get_field('post_registered_only');
+			if ($var_post_registered_only != true) {
+				echo '<span class="free-article">Free Article</span>';
+			}
+			//
+			//
 			echo '</a>';
 
 			echo '</div>';
@@ -44,6 +50,16 @@
 			echo '</div>';
 
 		}
+
+
+
+		// Pagination
+		echo '<div class="pagination-wrapper">';
+		echo paginate_links();
+		echo '</div>';
+
+
+
 		/* Restore original Post Data */
 		wp_reset_postdata();
 	} else {
