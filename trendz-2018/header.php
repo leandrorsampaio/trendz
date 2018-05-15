@@ -106,11 +106,33 @@
 										$query_menuheader->the_post();
 
 										$var_menuheader_title = get_the_title();
-										$var_menuheader_link = get_field('menu_link');
+                                        $var_menu_link_type = get_field('menu_link_type');
 
 										echo '<li class="menu-item level-1 ">';
-										echo '<a class="menu-item-link" href="' . $var_menuheader_link . '">' . $var_menuheader_title . '</a>';
-										echo '</li>';
+
+                                        if ($var_menu_link_type == 'freelink') {
+
+                                            $var_menu_link_free = get_field('menu_link_free');
+                                            echo '<a class="menu-item-link" href="' . $var_menu_link_free . '">' . $var_menuheader_title . '</a>';
+
+                                        } if ($var_menu_link_type == 'pagelink') {
+
+                                            $var_menu_link_page = get_field('menu_link_page');
+                                            echo '<a class="menu-item-link" href="' . $var_menu_link_page . '">' . $var_menuheader_title . '</a>';
+
+                                        } else {
+
+                                            $terms = get_field('menu_link_tax');
+
+                                            if( $terms ):
+                                                foreach( $terms as $term ):
+                                                    echo '<a class="menu-item-link" href="' . get_term_link( $term ) . '">' . $var_menuheader_title . '</a>';
+                                                endforeach;
+                                            endif;
+
+                                        }
+
+                                        echo '</li>';
 									}
 
 								} else {
