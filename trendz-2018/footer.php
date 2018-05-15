@@ -42,12 +42,9 @@
 			</div>
 			<div class="col-12 footer-newsletter">
 				<h5 class="footer-newsletter-title">Sign Up For Our News Letter</h5>
-				<form class="footer-newsletter-form">
-					<input class="footer-newsletter-form-imput" type="text" value="Your e-mail here..." onclick="this.value=''" />
-					<button class="footer-newsletter-form-btn">
-						Submit
-					</button>
-				</form>
+				<?php
+					echo do_shortcode( '[yikes-mailchimp form="1"]' );
+				?>
 			</div>
 			<div class="col-12 footer-logos">
 				<a class="footer-social-link facebook" href="#">
