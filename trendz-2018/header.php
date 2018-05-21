@@ -95,7 +95,6 @@
 								// WP_Query arguments
 								$args_menuheader = array(
 									'post_type'              => array( 'menuheader' ),
-									'order'                  => 'ASC'
 								);
 								// The Query
 								$query_menuheader = new WP_Query( $args_menuheader );

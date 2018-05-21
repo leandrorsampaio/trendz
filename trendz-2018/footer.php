@@ -14,7 +14,6 @@
 					// WP_Query arguments
 					$args_menufooter = array(
 						'post_type'              => array( 'menufooter' ),
-						'order'                  => 'ASC'
 					);
 					// The Query
 					$query_menufooter = new WP_Query( $args_menufooter );
