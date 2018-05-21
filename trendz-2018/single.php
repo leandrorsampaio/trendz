@@ -107,7 +107,15 @@ if ( have_posts() ) {
 							if ($var_post_registered_only != true) {
 								echo $theContent;
 							} else {
-								$counter = $theContent;
+
+
+								if (is_user_logged_in()) {
+
+									echo $theContent;
+
+								} else {
+
+									$counter = $theContent;
 									$limitation = substr($theContent, 0, 600);
 									echo $limitation . ' (...)';
 									//
@@ -138,6 +146,9 @@ if ( have_posts() ) {
 		                            }
 		                            // Restore original Post Data
 		                            wp_reset_postdata();
+
+								}
+
 							}
 							?>
 						</div>
