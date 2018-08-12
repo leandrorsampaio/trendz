@@ -108,6 +108,8 @@
 
 										$var_menuheader_title = get_the_title();
                                         $var_menu_link_type = get_field('menu_link_type');
+                                        $var_submenu_boo = get_field('submenu_enable');
+                                        $var_submenu_content = get_field('header_submenu_content');
 
 										echo '<li class="menu-item level-1 ">';
 
@@ -133,6 +135,13 @@
 
                                         } else {
                                             //
+                                        }
+
+
+                                        if ($var_submenu_boo) {
+                                            echo '<div class="submenu-wrapper">';
+                                            echo $var_submenu_content;
+                                            echo '</div>';
                                         }
 
                                         echo '</li>';

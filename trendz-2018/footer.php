@@ -99,7 +99,7 @@
 
 <div id="footerbar" class="footerbar">
 	<p>
-		® Mall Media InC. All Rights Reserved
+		&reg; Mall Media InC. All Rights Reserved
 	</p>
 </div>
 
