@@ -102,6 +102,13 @@ $category_name = $categories[0]->name;
 	                <h1 class="aside-title-text search-title">
 	                    All articles from the  <span><?php echo $category_name; ?></span> category.
 	                </h1>
+
+
+
+
+
+
+
 	            </div>
 			</aside>
 
