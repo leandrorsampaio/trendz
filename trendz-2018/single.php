@@ -39,11 +39,9 @@ if ( have_posts() ) {
 		$theAuthorLastName = get_the_author_meta('user_lastname');
 		$theAuthorCompleteName = $theAuthorFirstName . ' ' . $theAuthorLastName;
 		$theAuthorUrl = get_author_posts_url($theAuthorId);
+		?>
 
-	} // end while
-} // end if
 
-?>
 
 
 <div class="wp-single-wrapper container">
@@ -105,13 +103,13 @@ if ( have_posts() ) {
 							//
 							$var_post_registered_only = get_field('post_registered_only');
 							if ($var_post_registered_only != true) {
-								echo $theContent;
+								the_content();
 							} else {
 
 
 								if (is_user_logged_in()) {
 
-									echo $theContent;
+									the_content();
 
 								} else {
 
@@ -237,6 +235,14 @@ if ( have_posts() ) {
 
 
 </div>
+
+
+
+<?php
+	} // end while
+} // end if
+
+?>
 
 
 
