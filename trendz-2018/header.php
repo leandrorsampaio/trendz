@@ -68,15 +68,17 @@
                             <?php
                                 if(is_user_logged_in()) {
                                      get_currentuserinfo();
-                                    echo '<a href="' . get_permalink($pageID_login) . '">Wellcome ' . $current_user->user_login . '</a>';
+                                    echo '<a class="login-top-link" href="' . get_permalink($pageID_login) . '">Welcome ' . $current_user->user_login . ' <img src="' . get_template_directory_uri() . '/images/login-icon.png" /></a>';
                                 } else {
-                                    echo '<a href="' . get_permalink($pageID_login) . '">Member Login</a>';
+                                    echo '<a class="login-top-link" href="' . get_permalink($pageID_login) . '">Member Login</a>';
                                 }
                             ?>
                         </div>
                     </div>
                 </div>
 			</div>
+
+
 
 
 	        <header id="header" class="header container">
@@ -160,8 +162,10 @@
 								<p>
 									Print edition:
 								</p>
-								<img src="<?php echo get_template_directory_uri(); ?>/images/icsc.png" alt="icsc logo"/>
-							</div>
+                                <a href="https://www.icsc.org/" target="_blank">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/images/icsc.png" alt="icsc logo"/>
+                                </a>
+                            </div>
 
                             <?php
                             //

@@ -372,3 +372,35 @@
 		}
 	}
 }
+
+
+
+
+.login-username {
+	label {
+		color: @white;
+		position: relative;
+		visibility: hidden;
+		&::after {
+			color: @black-font;
+			content: 'Username';
+			position: absolute;
+			left: 0;
+			visibility: initial;
+		}
+	}
+}
+.login-password {
+	label {
+		color: @white;
+		position: relative;
+		visibility: hidden;
+		&::after {
+			color: @black-font;
+			content: 'Subscriber Code';
+			position: absolute;
+			left: 0;
+			visibility: initial;
+		}
+	}
+}
