@@ -22,7 +22,7 @@
 				$args_mosaic_home = array(
 					'category__not_in' => array( $ID_catAds ),
 					'posts_per_page' => 12,
-					'order' => 'ASC'
+					'order' => 'DESC'
 				);
 			} elseif ($var_front_end_mosaic_options == 'mosaichome2') {
 				//

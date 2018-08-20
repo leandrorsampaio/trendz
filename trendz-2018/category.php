@@ -54,7 +54,7 @@ $category_name = $categories[0]->name;
 					$args_mosaic_cat= array(
 						'cat' => $category_id,
 						'posts_per_page' => 12,
-						'order' => 'ASC'
+						'order' => 'DESC'
 					);
 				} elseif ($var_front_end_mosaic_options == 'mosaiccate2') {
 					$args_mosaic_cat= array(
@@ -66,7 +66,7 @@ $category_name = $categories[0]->name;
 					$args_mosaic_cat= array(
 						'cat' => $category_id,
 						'posts_per_page' => 20,
-						'order' => 'ASC'
+						'order' => 'DESC'
 					);
 				} else {
 					$args_mosaic_cat= array(
@@ -82,7 +82,7 @@ $category_name = $categories[0]->name;
 			$args_mosaic_cat= array(
 				'cat' => $category_id,
 				'posts_per_page' => 20,
-				'order' => 'ASC'
+				'order' => 'DESC'
 			);
 		}
 

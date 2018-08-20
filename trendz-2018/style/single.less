@@ -174,7 +174,7 @@
 			.catreadmore-wrapper {
 				border-top: 1px solid @grey-4;
 				padding-top: 15px;
-			    margin-top: 10px;
+				margin-top: 10px;
 			}
 		}
 		//
@@ -287,15 +287,27 @@
 
 .free-article {
 	background: @white;
-    position: absolute;
-    right: 0;
-    margin: 5px;
-    padding: 0px 5px;
-    font-size: 10px;
-    border-radius: 3px;
-    top: 0;
+	position: absolute;
+	right: 0;
+	margin: 5px;
+	padding: 0px 5px;
+	font-size: 10px;
+	border-radius: 3px;
+	top: 0;
 	box-shadow: @text-shadow-black;
 }
+.paid-article {
+	position: absolute;
+	right: 0;
+	margin: 5px;
+	top: 0;
+	background: transparent;
+	width: 25px;
+	height: 25px;
+	padding: 0;
+	border: 0;
+}
+
 
 
 .blocker-article-message {
@@ -365,8 +377,8 @@
 			padding: 3px 50px;
 			background: @grey-3;
 			font-weight: 700;
-		    font-size: 14px;
-		    align-self: flex-end;
+			font-size: 14px;
+			align-self: flex-end;
 			border: 0;
 			cursor: pointer;
 		}
@@ -383,7 +395,7 @@
 		visibility: hidden;
 		&::after {
 			color: @black-font;
-			content: 'Username';
+			content: 'Username/Subscriber Code';
 			position: absolute;
 			left: 0;
 			visibility: initial;
@@ -397,7 +409,7 @@
 		visibility: hidden;
 		&::after {
 			color: @black-font;
-			content: 'Subscriber Code';
+			content: 'Password';
 			position: absolute;
 			left: 0;
 			visibility: initial;
