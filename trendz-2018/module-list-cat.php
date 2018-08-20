@@ -20,8 +20,10 @@
 			$var_post_registered_only = get_field('post_registered_only');
 			if ($var_post_registered_only != true) {
 				echo '<span class="free-article">Free Article</span>';
+			} else {
+				echo '<span class="paid-article"><img src="' . get_template_directory_uri() . '/images/login-icon.png" /></span>';
 			}
-			
+
 			//
 			echo '</a>';
 			echo '</div>';

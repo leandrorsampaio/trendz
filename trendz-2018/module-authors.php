@@ -7,6 +7,12 @@
 	</div>
 
 	<div class="row wp-single-wrapper-row">
+		<div class="col-12 authorsintro">
+			<?php the_content(); ?>
+		</div>
+	</div>
+
+	<div class="row wp-single-wrapper-row">
 
 		<div class="col-12 authorslist">
 			<?php
